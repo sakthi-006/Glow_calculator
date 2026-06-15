@@ -47,11 +47,10 @@ Errors (like division by zero or invalid expressions) are handled gracefully wit
 
 
 📸 Preview
-<img width="1366" height="768" alt="Screenshot 2026-06-15 194514" src="https://github.com/user-attachments/assets/6ca358b4-ac12-49cb-bbc8-3b716effa81e" />
+<img width="1366" height="570" alt="Screenshot 2026-06-15 194514" src="https://github.com/user-attachments/assets/9f71b026-c6b0-4a1f-8d4a-e3915a550cf3" />
+<img width="1366" height="588" alt="Screenshot 2026-06-15 194713" src="https://github.com/user-attachments/assets/a4e78466-1c1c-49f2-9992-31ea5c75126f" />
+<img width="1366" height="584" alt="Screenshot 2026-06-15 194606" src="https://github.com/user-attachments/assets/604a11a3-3efd-40c3-88fc-80753b61558b" />
 
-<img width="1366" height="768" alt="Screenshot 2026-06-15 194606" src="https://github.com/user-attachments/assets/0aa19187-8993-40c2-81bb-71a5646b58e8" />
-
-<img width="1366" height="768" alt="Screenshot 2026-06-15 194713" src="https://github.com/user-attachments/assets/78ec4fac-20d1-4710-b45c-8ffa2bf59ee0" />
 
 📄 License
 This project is open source and available for personal and educational use.
