@@ -1,0 +1,225 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0a0a0f;
+  overflow: hidden;
+  position: relative;
+}
+
+/* ── Background glow orbs ── */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: floatOrb 8s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb1 {
+  width: 350px;
+  height: 350px;
+  background: rgba(139, 92, 246, 0.25);
+  top: -80px;
+  left: -80px;
+  animation-delay: 0s;
+}
+
+.orb2 {
+  width: 280px;
+  height: 280px;
+  background: rgba(236, 72, 153, 0.2);
+  bottom: -60px;
+  right: -60px;
+  animation-delay: 3s;
+}
+
+.orb3 {
+  width: 220px;
+  height: 220px;
+  background: rgba(59, 130, 246, 0.18);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: 1.5s;
+}
+
+@keyframes floatOrb {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50%       { transform: translateY(-22px) scale(1.06); }
+}
+
+/* ── Calculator card ── */
+.calculator {
+  position: relative;
+  z-index: 2;
+  width: 300px;
+  background: rgba(15, 15, 25, 0.85);
+  border-radius: 28px;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 0 0 1px rgba(139, 92, 246, 0.15),
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+}
+
+.calc-header {
+  text-align: center;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+/* ── Display ── */
+.display-wrap {
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 16px 18px 12px;
+  margin-bottom: 20px;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.expr-line {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.3);
+  min-height: 16px;
+  margin-bottom: 4px;
+  letter-spacing: 0.5px;
+  word-break: break-all;
+  text-align: right;
+}
+
+#display {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #ffffff;
+  font-size: 2.4rem;
+  font-weight: 300;
+  text-align: right;
+  width: 100%;
+  letter-spacing: -1px;
+}
+
+/* ── Button grid ── */
+#buttons-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+/* ── Base button ── */
+.btn {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  height: 58px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: inherit;
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.85);
+  transition: transform 0.12s ease, background 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.11);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+  transform: scale(0.93);
+}
+
+/* ── Operator buttons ── */
+.btn.operator {
+  background: rgba(139, 92, 246, 0.18);
+  color: #a78bfa;
+  border: 1px solid rgba(139, 92, 246, 0.25);
+}
+
+.btn.operator:hover {
+  background: rgba(139, 92, 246, 0.3);
+  box-shadow: 0 6px 20px rgba(139, 92, 246, 0.2);
+}
+
+/* ── Clear button ── */
+.btn.clear {
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.btn.clear:hover {
+  background: rgba(239, 68, 68, 0.28);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.2);
+}
+
+/* ── Equals button ── */
+.btn.equal {
+  grid-row: span 2;
+  height: 100%;
+  background: linear-gradient(160deg, #8b5cf6, #ec4899);
+  color: #ffffff;
+  font-size: 1.5rem;
+  border: none;
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.35);
+}
+
+.btn.equal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(139, 92, 246, 0.5);
+}
+
+.btn.equal:active {
+  transform: scale(0.93);
+}
+
+/* ── Ripple effect ── */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  transform: scale(0);
+  animation: rippleAnim 0.55s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes rippleAnim {
+  to {
+    transform: scale(5);
+    opacity: 0;
+  }
+}
+
+/* ── Pop animation on click ── */
+.btn.pop {
+  animation: popAnim 0.18s ease;
+}
+
+@keyframes popAnim {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(0.88); }
+  100% { transform: scale(1); }
+}
